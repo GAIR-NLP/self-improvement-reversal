@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta name="description"
         content="Progress or Regress? Self-Improvement Reversal in Post-training">
-  <meta name="keywords" content="LLM, Post-training, Self-Improvement">
+  <meta name="keywords" content="LLMs, Self-Improvement, Post-training">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Progress or Regress? Self-Improvement Reversal in Post-training</title>
 
+  
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
   <script>
@@ -21,6 +22,7 @@
 
     gtag('config', 'G-PYVRSFMDRL');
   </script>
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -32,13 +34,15 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/abel.png">
+  <link rel="icon" href="./static/images/trust.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -51,34 +55,41 @@
     </a>
   </div>
   <div class="navbar-menu">
-    <!--
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
+      <a class="navbar-item" href="https://github.com/GAIR-NLP/">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
       </a>
-      
+
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
+          <a class="navbar-item" href="https://github.com/GAIR-NLP/abel">
+            Abel
           </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
+          <a class="navbar-item" href="https://gair-nlp.github.io/MathPile/">
+            MathPile
           </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
+          <a class="navbar-item" href="https://gair-nlp.github.io/ReAlign/">
+            ReAlign
           </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
+          <a class="navbar-item" href="https://gair-nlp.github.io/benbench/">
+            BenBench
+          </a>
+          <a class="navbar-item" href="https://gair-nlp.github.io/OlympicArena/">
+            OlympicArena
+          </a>
+          <a class="navbar-item" href="https://gair-nlp.github.io/anole/">
+            Anole
+          </a>
+          <a class="navbar-item" href="https://gair-nlp.github.io/BeHonest/">
+            BeHonest
           </a>
         </div>
       </div>
-      -->
     </div>
 
   </div>
@@ -92,370 +103,218 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">Progress or Regress? Self-Improvement Reversal in Post-training</h1>
           <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://ethanc111.github.io/">Ting Wu</a><sup>1,3</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://plms.ai/people/index.html)">Xuefeng Li</a><sup>2,3</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://plms.ai/people/index.html">Pengfei Liu</a><sup>2,3,4+</sup>,
-            </span>
-          </div>
+            <span class="author-block">Ting Wu<sup>1,3</sup>,</span>
+            <span class="author-block">Xuefeng Li<sup>2,3</sup>,</span>
+            <span class="author-block">Pengfei Liu<sup>2,3,4†</sup>,</span>
+        </div>
+        <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Fudan University,</span>
+            <span class="author-block"><sup>2</sup>Shanghai Jiao Tong University,</span>
+            <span class="author-block"><sup>3</sup>Generative AI Research Lab (GAIR)</span>
+            <span class="author-block"><sup>4</sup>Shanghai AI Laboratory,</span>
+        </div>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Fudan University</span>
-            <br>
-            <span class="author-block"><sup>2</sup>Shanghai Jiaotong University</span>
-            <br>
-            <span class="author-block"><sup>3</sup>Generative Artificial Intelligence Research Lab (GAIR), Shanghai Jiaotong University</span>
-            <br>
-            <span class="author-block"><sup>3</sup>Shanghai AI Laboratory</span>
-            <br>
-            <span class="author-block"><sup>+</sup>Corresponding Author</span>
-          </div>
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"><sup>†</sup>Corresponding author</span>
+        </div>
+        
 
-          <div class="column has-text-centered">
-              <!-- Video Link. -->
-
-              <!--
-              <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/2407.05013" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/GAIR-NLP/self_improvement_reversal" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
                 </a>
-              </span>
-              -->
-              
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/hongtangshui/self_improvement_reversal"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-
+            </span>
+            <!-- Dataset Link. -->
           </div>
+
         </div>
+
       </div>
     </div>
   </div>
 </section>
 
-<!--
-<section class="hero teaser">
+
+
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section>
--->
-
-<!--
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
--->
     <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered" font-size: 18px;">
+    <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h1 class="title is-3">Abstract</h1>
+        <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            📝 <strong>Abel</strong> is created as a tribute to <a href="https://en.wikipedia.org/wiki/Niels_Henrik_Abel">Niels Henrik Abel</a> for his groundbreaking work in algebra and analysis, at which our model is relatively better as well. There is still a long way for us to go, though 🏃‍♂️🏃‍♀️🏁🏃‍♂️🏃‍♀️.
+            Self-improvement through post-training methods has been acclaimed for enhancing the problem-solving capabilities (e.g., mathematical reasoning) of Large Language Models (LLMs) without human intervention. Amidst the quest for self-improvement in LLMs, the persistent question arises: are these iterative post-training methods truly fostering progress, or are they inadvertently leading to regression?
           </p>
-          <p>We show that:</p>
+            
+          <p>
+            To address this, we propose a comprehensive evaluative framework that goes beyond the superficial pass@1 metric to scrutinize the underlying enhancements of post-training paradigms for self-improvement. Through rigorous experimentation and analysis across diverse problem-solving tasks, the empirical results point out the phenomenon of self-improvement reversal, where models showing improved performance across benchmarks will paradoxically exhibit declines in broader, essential capabilities.
+          </p>
           <ul>
-              <li><strong>without</strong> tools</li>
-              <li><strong>without</strong> continuing pretraining</li>
-              <li><strong>without</strong> reward model</li>
-              <li><strong>without</strong> RLHF</li>
-              <li><strong>ONLY</strong> using SFT</li>
+            <li><b>Improvement Problems: </b>Iterative self-improvement hardly entails the acquisition of new problem-solving abilities, but rather the enhancement of the model’s correct  answer selection within its generation
+              space.</li>
+            <li><b>Solutions Diversity: </b>The diversity of model's outputs, which can be crucial for creativity and robustness in problem-solving, is compromised.</li>
+            <li><b>OOD Generalization: </b>The model exhibit declines in out-of-distribution (OOD) generalization. </li>
           </ul>
-          <p>We have established a new <strong>state-of-the-art</strong> performance across open-source LLMs (that do not use external tools) on the GSM8k (<strong>83.62</strong>) and MATH (<strong>28.26</strong>) benchmarks. Specifically:</p>
-          <ul>
-              <li>the performance on GSM8K, at <strong>83.62%</strong>, <strong>surpasses top-tier models, such as PaLM-1, Minerva (Google), Claude-instant (Anthropic), ChatGPT (OpenAI)</strong>, with only a 1-percentage-point lag behind Google's latest model, PaLM-2-Flan.</li>
-              <li>achieving an accuracy rate of <strong>28.26%</strong> on <strong>highly challenging mathematical competition problems</strong> (compared to GPT4's 42.5%), it maintains a significant lead over other open-source models, surpassing the previous best open-source model by 5.56%.</li>
-              <li>the 7B and 13B models have achieved a <strong>historic milestone</strong> in open-source model performance in both GSM8K and MATH.</li>
-              <li><code>GAIRMath-Abel</code> secures <strong>3 positions in the Top 10 rankings</strong> and stands as the <strong>only university-led project</strong> in the list (others are either star startups or big tech companies).</li>
-              <li>Using our approach, we not only achieved excellent results on GSM8K and MATH, but when given a <strong>new dataset</strong> (<a href="https://www.mathgpt.com/">TALSCQ-EN</a>), we <strong>quickly</strong> attained state-of-the-art (SOTA) performance without too much effort, surpassing the commercial multi-billion-dollar model <a href="https://www.mathgpt.com/">MathGPT</a> and GPT4.</li>
-          </ul>
-        <p>We demonstrate that:</p>
-        <ul>
-            <li>the capabilities of SFT are <strong>significantly underestimated</strong>, and researchers should approach SFT with due reverence and caution</li>
-            <li>exceptional mathematical problem-solving capability can be achieved <strong>solely through SFT</strong>, which elicits more imaginative possibilities in future exploration in this direction.</li>
-        </ul>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
 
-    <div class="columns is-centered has-text-centered" font-size: 18px;">
-      <div class="column is-four-fifths">
-        <h1 class="title is-3">Models and Performance</h1>
-        <div class="content has-text-justified">
-            <table border="1">
-                <tr>
-                    <th>Model Name</th>
-                    <th>HF Checkpoints</th>
-                    <th>GSM8k</th>
-                    <th>MATH</th>
-                    <th>License</th>
-                </tr>
-                <tr>
-                    <td>GAIRMath-Abel-70B</td>
-                    <td>🤗 <a href="https://huggingface.co/GAIR/GAIRMath-Abel-70b" target="_blank">70B</a></td>
-                    <td><strong>83.62</strong> (+ 2.02)</td>
-                    <td><strong>28.26</strong> (+ 5.56)</td>
-                    <td><a href="https://ai.meta.com/resources/models-and-libraries/llama-downloads/">Llama 2</a></td>
-                </tr>
-                <tr>
-                    <td>GAIRMath-Abel-13B</td>
-                    <td>🤗 <a href="https://huggingface.co/GAIR/GAIRMath-Abel-13b" target="_blank">13B</a></td>
-                    <td><strong>66.41</strong> (+ 2.51)</td>
-                    <td><strong>17.34</strong> (+ 3.34)</td>
-                    <td><a href="https://ai.meta.com/resources/models-and-libraries/llama-downloads/">Llama 2</a></td>
-                </tr>
-                <tr>
-                    <td>GAIRMath-Abel-7B</td>
-                    <td>🤗 <a href="https://huggingface.co/GAIR/GAIRMath-Abel-7b" target="_blank">7B</a></td>
-                    <td><strong>59.74</strong> (+ 4.84)</td>
-                    <td><strong>13.00</strong> (+ 2.40)</td>
-                    <td><a href="https://ai.meta.com/resources/models-and-libraries/llama-downloads/">Llama 2</a></td>
-                </tr>
-              <p><i>Numbers in "()" represent improvement against previous SOTA open-sourced methods, i.e., WizardMath.</i></p>
-              </table>
+          <div align="center">
+            <figure>
+              <img src="static/images/figure_case_study.png" width=100%/>
+              <figcaption>One case of sampled responses from the test set after iterative DPO training of the Mistral7B model on the GSM8K dataset.</figcaption>
+            </figure>
           </div>
         </div>
-    </div>
-
-    <div class="columns is-centered has-text-centered" font-size: 18px;">
-      <div class="column is-four-fifths">
-        <h1 class="title is-3">Methodology</h1>
-        <div class="content has-text-justified">
-
-           <p>We propose <strong>Parental Oversight</strong>,  A <strong>Babysitting Strategy</strong> for Supervised Fine-tuning,</p>
-
-          <p><strong>Parental Oversight</strong> is not limited to any specific data processing method. Instead, it defines the data processing philosophy that should guide supervised fine-tuning in the era of Generative AI (GAI). We believe that in the era of GAI, <a href="https://arxiv.org/pdf/2206.11147.pdf">data structure engineering</a> has emerged as a new paradigm. Within this paradigm, the manner in which the fine-tuning data is processed significantly impacts the performance of the trained GAI. We expect a growing number of studies in the community to focus on this data processing philosophy.</p>
-
-          <p>The principle of <strong>Parental Oversight</strong> emphasizes treating supervised fine-tuning with care and prudence. This is analogous to the way parents are encouraged to educate their children. Different types of data, along with their presentation formats (e.g., step-by-step reasoning, iterative refinement), can be likened to varied educational methods. Just as parents cautiously select the most effective approach to instruct their children, GAI practitioners should cautiously select the most effective data processing approaches to better instruct their LLMs.</p>
-
-          <p>Furthermore, the "the more data, the better" philosophy doesn't always hold true. The quality and relevance of annotated samples can often outweigh their quantity. Training samples used in SFT should not just present the right answer, but also instruct the model on how the correct answer was derived based on the knowledge of the LLM. Additionally, if the LLM's knowledge is not sufficient to answer a question, <strong>Parental Oversight</strong> should step in to address the knowledge gaps promptly.</p>
-          
-        </div>
-        </div>
-    </div>
-
-    <!-- Leaderboard. -->
-    <div class="columns is-centered has-text-centered" style="font-size: 18px;">
-      <div class="column is-four-fifths">
-          <h1 class="title is-3">Leaderboard for Mathematical Reasoning</h1>
-          <div class="content has-text-justified">
-            <p><code>🔒</code> stands for the proprietary model while <code>🌍</code> represents the open-source model</p>
-            <p><code>🎓</code> suggests that model development is led by academic university (instead of companies)</p>
-            <p>We only consider models <strong>without</strong> using any tool (e.g., Python)</p>
-              <table border="1" cellspacing="0" cellpadding="5">
-        <thead>
-            <tr>
-                <th>Ranking</th>
-                <th>Model</th>
-                <th>Param.</th>
-                <th>Leading Organization</th>
-                <th>GSM8K</th>
-                <th>MATH</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- I've added all the rows as per your request -->
-            <tr><td>🔒 1</td><td>GPT-4</td><td>unknown</td><td><a href="https://openai.com/">OpenAI</a></td><td>92.0</td><td>42.5</td></tr>
-            <tr><td>🔒 2</td><td>Claude-2</td><td>unknown</td><td><a href="https://www.anthropic.com/">Anthropic</a></td><td>88.0</td><td>-</td></tr>
-            <tr><td>🔒 3</td><td>PaLM-2-Flan</td><td>unknown</td><td><a href="https://about.google/">Google</a></td><td>84.7</td><td>33.2</td></tr>
-            <tr><td>🌍 4</td><td><strong>GAIRMath-Abel</strong></td><td>70B</td><td>🎓 <a href="https://plms.ai/">GAIR Lab at Shanghai Jiaotong University</a></td><td>83.6</td><td>28.3</td></tr>
-            <tr><td>🌍 5</td><td>WizardMath</td><td>70B</td><td><a href="https://www.microsoft.com/">Microsoft</a></td><td>81.6</td><td>22.7</td></tr>
-            <tr><td>🔒 6</td><td>Claude-Instant</td><td>unknown</td><td><a href="https://www.anthropic.com/">Anthropic</a></td><td>80.9</td><td>-</td></tr>
-            <tr><td>🔒 7</td><td>ChatGPT</td><td>unknown</td><td><a href="https://openai.com/">OpenAI</a></td><td>80.8</td><td>34.1</td></tr>
-            <tr><td>🔒 8</td><td>ChatGPT-0301</td><td>unknown</td><td><a href="https://openai.com/">OpenAI</a></td><td>74.9</td><td>-</td></tr>
-            <tr><td>🌍 9</td><td><strong>GAIRMath-Abel</strong></td><td>13B</td><td>🎓 <a href="https://plms.ai/">GAIR Lab at Shanghai Jiaotong University</a></td><td>66.4</td><td>17.3</td></tr>
-            <tr><td>🌍 10</td><td><strong>GAIRMath-Abel</strong></td><td>7B</td><td>🎓 <a href="https://plms.ai/">GAIR Lab at Shanghai Jiaotong University</a></td><td>59.7</td><td>13.0</td></tr>
-            <tr><td>🔒 11</td><td>Minerva</td><td>540B</td><td><a href="https://about.google/">Google</a></td><td>58.8</td><td>33.6</td></tr>
-            <tr><td>🔒 12</td><td>PaLM</td><td>540B</td><td><a href="https://about.google/">Google</a></td><td>56.9</td><td>8.8</td></tr>
-            <tr><td>🌍 13</td><td>Llama-2</td><td>70B</td><td><a href="https://about.meta.com/">Meta</a></td><td>56.8</td><td>13.5</td></tr>
-            <tr><td>🌍 14</td><td>RFT</td><td>33B</td><td><a href="https://github.com/OFA-Sys">OFA</a></td><td>56.5</td><td>7.4</td></tr>
-            <tr><td>🌍 15</td><td>Baichuan2-13B</td><td>13B</td><td> <a href="https://www.baichuan-ai.com/home">Baichuan</a></td><td>52.8</td><td>10.1</td></tr>
-            <tr><td>🔒 16</td><td>Minerva</td><td>62B</td><td><a href="https://about.google/">Google</a></td><td>52.4</td><td>27.6</td></tr>
-            <tr><td>🌍 17</td><td>PaLM</td><td>64B</td><td><a href="https://about.google/">Google</a></td><td>52.4</td><td>4.4</td></tr>
-            <tr><td>🔒 18</td><td>RFT</td><td>13B</td><td><a href="https://github.com/OFA-Sys">OFA</a></td><td>52.1</td><td>5.1</td></tr>
-            <tr><td>🔒 19</td><td>LlaMA</td><td>65B</td><td><a href="https://about.meta.com/">Meta</a></td><td>50.9</td><td>10.6</td></tr>
-            <tr><td>🌍 20</td><td>QWen</td><td>7B</td><td><a href="https://www.alibaba.com/">Alibaba</a></td><td>44.9</td><td>8.5</td></tr>
-            <tr><td>🌍 21</td><td>Chinchilla</td><td>70B</td><td> <a href="https://www.deepmind.com/">DeepMind</a></td><td>43.7</td><td>-</td></tr>
-            <tr><td>🔒 22</td><td>Llama-2</td><td>34B</td><td><a href="https://about.meta.com/">Meta</a></td><td>42.2</td><td>6.24</td></tr>
-            <tr><td>🔒 23</td><td>Galactica</td><td>30B</td><td><a href="https://about.meta.com/">Meta</a></td><td>41.7</td><td>12.7</td></tr>
-            <tr><td>🌍 24</td><td>ChatGLM2</td><td>12B</td><td> <a href="https://www.zhipuai.cn/">Zhipu</a></td><td>40.9</td><td>-</td></tr>
-            <tr><td>🔒 25</td><td>Text-davinci-002</td><td>175B</td><td><a href="https://openai.com/">OpenAI</a></td><td>40.7</td><td>19.1</td></tr>
-            <tr><td>🔒 26</td><td>Llama</td><td>33B</td><td><a href="https://about.meta.com/">Meta</a></td><td>35.6</td><td>7.1</td></tr>
-            <tr><td>🌍 27</td><td>GPT-3</td><td>175B</td><td><a href="https://openai.com/">OpenAI</a></td><td>34</td><td>5.2</td></tr>
-            <tr><td>🌍 28</td><td>InternLM</td><td>7B</td><td><a href="https://www.shlab.org.cn/">Shanghai AI Lab</a></td><td>31.2</td><td>-</td></tr>
-            <tr><td>🌍 29</td><td>Llama-2</td><td>13B</td><td><a href="https://about.meta.com/">Meta</a></td><td>28.7</td><td>3.9</td></tr>
-            <tr><td>🔒 30</td><td>Vicuna v1.3</td><td>13B</td><td><a href="https://lmsys.org/">LMSys</a></td><td>27.6</td><td>-</td></tr>
-            <tr><td>🌍 31</td><td>Falcon</td><td>40B</td><td><a href="https://www.tii.ae/">Technology Innovation Institute</a></td><td>19.6</td><td>2.5</td></tr>
-            <tr><td>🔒 32</td><td>Llama</td><td>13B</td><td><a href="https://about.meta.com/">Meta</a></td><td>17.8</td><td>3.9</td></tr>
-            <tr><td>🔒 33</td><td>MPT</td><td>30B</td><td><a href="https://www.mosaicml.com/">MosaicML</a></td><td>15.2</td><td>3.1</td></tr>
-            <tr><td>🔒 34</td><td>Galactica</td><td>6.7B</td><td><a href="https://about.meta.com/">Meta</a></td><td>10.2</td><td>2.2</td></tr>
-        </tbody>
-    </table>
-          </div>
       </div>
     </div>
-    <!--/ Leaderboard. -->
-  
-    <!--/ Matting. -->
-    <!-- Concurrent Work. -->
-<!--
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Concurrent Work. -->
-
   </div>
-
 </section>
 
-<div class="columns is-centered has-text-centered" font-size: 18px;">
-  <div class="column is-four-fifths">
-  <div class="container is-max-desktop content">
-    <h1 class="title is-3">Demo</h1>
-  <!-- First figure -->
-  <figure>
-      <img src="./static/images/gsm8k_comparison.png" alt="Description of first image">
-      <figcaption>Llama2 v.s. Abel on gsm8k question</figcaption>
-  </figure>
 
-  <!-- Second figure -->
-  <figure>
-      <img src="./static/images/MATH_comparison.png" alt="Description of second image">
-      <figcaption>Llama2 v.s. Abel on MATH question</figcaption>
-  </figure>
-</div>
-</div>
-</div>
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Post-training for Self-Improvement</h2>
+        <div align="center">
+          <figure>
+            <img src="static/images/algorithm.png" width=100%/>
+            <figcaption>Iterative Self-Improvement.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiment</h2>
+        
+        <div align="center">
+          <figure>
+            <img src="static/images/result.png" width=100%/>
+            <figcaption>Pass@1 accuracy across the four benchmarks by performing with the three paradigms: Iterative SFT, Iterative DPO and Iterative SFT-DPO.</figcaption>
+          </figure>
+        </div>
+
+
+        <div align="center">
+          <figure>
+            <img src="static/images/coverage.png" width=100%/>
+            <figcaption>The shaded area indicates the correct answer coverage of M. </figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Critical Evaluations on Self-Improvement</h2>
+        <div class="content has-text-justified">
+          <p>
+            Despite the extensive exploration of various post-training practices for self-improvement and a deepened understanding of their efficacy, current endeavors remain narrowly focused on enhancing performance numbers across these problem-solving benchmarks. Transitioning beyond using pass@1 accuracy as the indicator of improvement, our objective in this section is to engage in a critical examination and reevaluation of iterative self-improvement: discerning whether the improvements constitute genuine progress or merely regression.
+
+            <h4 class="title is-8">(A) Improvement Problems</h4>
+            <div align="center">
+              <figure>
+                <img src="static/images/improvementset.png" width=100%/>
+                <figcaption>Pass@N accuracy of M1 with zero-shot prompting on IS(t), for t > 2</figcaption>
+              </figure>
+            </div>
+            <p>To better gauge how the model problem-solving capabilities evolve overtime, we propose to first quantify the improvement problems as improvement set (IS) at each iteration. We apply this evaluative methodology to CSQA, GSM8K, MATH and MBPP datasets with three post-training methods. Generation sampling N varies from 2<sup>1</sup> to 2<sup>6</sup> with the temperature set as 0.75.</p>
+            <p>As N grows, M1 achieves near-perfect pass@N accuracy on IS(t), suggesting its inherent capacity to tackle the deemed improvement problems.</p>
+
+            <h4 class="title is-8">(B) Solutions Diversity</h4> 
+            
+            <div align="center">
+              <figure>
+                <img src="static/images/solution.png" width=100%/>
+                <figcaption>Diversity of the sampling outputs from Mt within the iterative process.</figcaption>
+              </figure>
+            </div>
+            <p>While pass@1 accuracy measures the correctness of the final answer, it does not capture the diversity of solutions a model can generate. we employ a combination of Distinct N-grams and Sentence-BERT embedding cosine similarity to measure mod diversity. Additionally, for mathematical reasoning, we introduce Distinct Equations to measure the diversity of mathematical answers by analyzing the variety of equations in the generated solutions.</p>
+            <p>All methods show a consistent decrease in diversity, significantly diminishing the diversity of model outputs over iterations, impacting both correct and incorrect answers. This reduction is evident across all three metrics: syntactic, semantic, and logical diversity.</p>
+
+
+            <h4 class="title is-8">(C) OOD Generalization</h4>
+            <div align="center">
+              <figure>
+                <img src="static/images/ood.png" width=100%/>
+                <figcaption>Pass@1 Accuracy of Mt on the MATH Algebra Test Set (Post-Training on GSM8K)</figcaption>
+              </figure>
+            </div>
+            <p>In our pursuit to understand the broader implications of iterative self-improvement, it is crucial to assess not only the models’ performance on specific benchmarks but also their ability to generalize to out-of-distribution (OOD) tasks. To evaluate the generalization capability of the models, we conducted iterative post-training on the GSM8K dataset and then transferred these models to the MATH algebra test set. For the sake of measuring OOD generalization, we define two metrics as follows defined to facilitate a deeper analysis:
+            </p>
+            <ul>
+              <li><b> Whole Accuracy </b>: this metric represents the pass@1 accuracy across the entire
+                test set.</li>
+              <li><b>Group Disparity: </b>This metric quantifies the difference in pass@1 accuracy between the best performing group (Level 1 test set) and the worst-performing group (Level 5 test set).</li>
+            </ul>
+            <p>With the increase in iterative steps, Iterative SFT and Iterative SFT-DPO can significantly harm the OOD generalization. In contrast, Iterative DPO demonstrates a noticeable improvement. All three iterative post-training methods can exacerbate the generalization disparities across groups, inadvertently causing models to focus on easier problems rather than enhancing their ability to solve more complex ones. </p>
+              
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Contact. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">📬 Contact</h2>
+        <div class="content has-text-justified">
+          <p>
+            If you have any questions regarding this project, feel free to submit a <a href="https://github.com/GAIR-NLP/self-improvement-reversal">github issue</a> or reach out to us via email.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{abel,
-  author = {Chern, Ethan and Zou, Haoyang and Li, Xuefeng and Hu, Jiewen and Feng, Kehua and Li, Junlong and Liu, Pengfei},
-  title = {Generative AI for Math: Abel},
-  year = {2023},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/GAIR-NLP/abel}},
-}</code></pre>
+    <pre><code>@article{
+    }
+</code></pre>
   </div>
 </section>
 
+
 <footer class="footer">
- <!--
   <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-  -->
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
@@ -464,18 +323,145 @@
                                                 href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
-          <p>
+          <!-- <p>
             This means you are free to borrow the <a
               href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
             we just ask that you link back to this page in the footer.
             Please remember to remove the analytics code included in the header of the website which
             you do not want on your website.
-          </p>
+          </p> -->
         </div>
       </div>
     </div>
   </div>
 </footer>
+
+<script>
+  function showLeaderboard(type) {
+  // Hide all leaderboards initially
+  var allTables = document.querySelectorAll('.leaderboard-table');
+  allTables.forEach(table => table.style.display = 'none');
   
+  // Show and sort the selected leaderboard
+  var table, isAscending;
+  switch (type) {
+    case 'selfKnowledge':
+      table = document.getElementById('selfKnowledgeTable');
+      isAscending = false;  // Higher values at the top
+      break;
+    case 'nonDeceptiveness':
+      table = document.getElementById('nonDeceptivenessTable');
+      isAscending = true;  // Lower values at the top
+      break;
+    case 'consistency':
+      table = document.getElementById('consistencyTable');
+      isAscending = false;  // Higher values at the top
+      break;
+  }
+
+  table.style.display = 'block';
+  sortTableByColumn(table.id, 1, isAscending);
+}
+
+function sortTableByColumn(tableId, colIndex, ascending = true) {
+  var table = document.getElementById(tableId);
+  var rows = Array.from(table.rows).slice(1);
+
+  rows.sort(function(a, b) {
+    var cellA = parseFloat(a.cells[colIndex].innerText) || 0;
+    var cellB = parseFloat(b.cells[colIndex].innerText) || 0;
+    return ascending ? cellA - cellB : cellB - cellA;
+  });
+
+  rows.forEach(function(row) {
+    table.tBodies[0].appendChild(row);
+  });
+}
+
+// Initialize the sorting for each leaderboard upon page load
+document.addEventListener('DOMContentLoaded', function() {
+  showLeaderboard('selfKnowledge'); // Show and sort self-knowledge by default
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.leaderboard-table th').forEach(function(header, index) {
+    header.addEventListener('click', function() {
+      var tableId = header.closest('table').id;
+      var ascending = !header.classList.contains('ascending');
+      sortTableByColumn(tableId, index, ascending);
+      header.classList.toggle('ascending', ascending);
+    });
+  });
+});
+</script>
+
+
+<style>
+  .hidden {
+      display: none;
+  }
+  .sortable:hover {
+      cursor: pointer;
+  }
+  .asc::after {
+      content: ' ↑';
+  }
+  .desc::after {
+      content: ' ↓';
+  }
+  .button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg, #C972FF, #7D74F3 50%, #40E0EB); /* Lighter gradient colors */
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 9px; /* Smaller font size */
+  justify-content: center;
+  line-height: 1em;
+  min-width: 70px; /* Smaller width */
+  padding: 2px; /* Less padding */
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-right: 10px; /* Space between buttons */
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(235, 235, 245); /* Lighter background color for the text span */
+  color: #333; /* Darker text color for better contrast */
+  padding: 8px 12px; /* Adjust padding for smaller size */
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: rgba(235, 235, 245, 0.5); /* Even lighter on hover */
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 16px; /* Adjust font size for larger screens */
+    min-width: 120px; /* Adjust minimum width for larger screens */
+  }
+}
+</style>
+
+
+
+
 </body>
 </html>
