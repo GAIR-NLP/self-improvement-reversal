@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Progress or Regress? Self-Improvement Reversal in Post-training">
+  <meta name="keywords" content="LLMs, Self-Improvement, Post-training">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Progress or Regress? Self-Improvement Reversal in Post-training</title>
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/trust.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+    
+  
+        <div class="navbar-item is-hoverable">
+          <a class="navbar-item" href="#overview">
+              Overview
+          </a>
+            <a class="navbar-item" href="#systemformulation">
+              Systematic Formulation
+            </a>
+            <a class="navbar-item" href="#evaluation">
+              Reversal Phenomenon
+            </a>
+            <a class="navbar-item" href="#contact">
+              Contact
+            </a>
+            <a class="navbar-item" href="#reference">
+              BibTeX
+            </a>
+        </div>
+      </div>
+  
+    </div>
+  </nav>
+  
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Progress or Regress? Self-Improvement Reversal in Post-training</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Ting Wu<sup>1,3</sup> </span>
+            <span class="author-block">Xuefeng Li<sup>2,3</sup> </span>
+            <span class="author-block">Pengfei Liu<sup>2,3,4</sup> </span>
+        </div>
+        <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Fudan University</span>
+            <span class="author-block"><sup>2</sup>Shanghai Jiao Tong University</span>
+        </div>
+        <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>3</sup>Generative AI Research Lab (GAIR)</span>
+            <span class="author-block"><sup>4</sup>Shanghai AI Laboratory</span>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/2407.05013" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://github.com/GAIR-NLP/self_improvement_reversal" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+                </a>
+            </span>
+            <!-- Dataset Link. -->
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="subtitle has-text-centered">
+      <span style="font-weight: bold; color: #26a3e6"> Self-improvement Reversal </span> reveals the phenomenon that during iterative post-training, as pass@1 accuracy improves, broader capabilities like output diversity and out-of-distribution generalization decline, exhibiting a paradoxical trend.
+      </h2>
+      <div style="text-align: center;">
+        <img src="static/images/figure_case_study.png" width="80%" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3", id="overview">Overview</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            🤔 <span style="font-weight: bold; font-size: 1.05em"> A thought-provoking research question </span>
+          </p>
+          <p>
+            Self-improvement through post-training methods has been acclaimed for enhancing the problem-solving capabilities (e.g., mathematical reasoning) of Large Language Models (LLMs) without human intervention. However, current research all concentrate on maximizing benchmark scores through iterative self-improvement, there is little
+            exploration of the underlying factors contributing to performance gains. As a result, the progress and reliability of different self-improvement methods are not guaranteed. Amidst the quest for self-improvement in LLMs, the persistent question arises: <b>are these iterative post-training methods truly fostering progress, or are they inadvertently leading to regression?</b>
+          </p>
+
+          <p>
+            👩‍💻 <span style="font-weight: bold; font-size: 1.05em"> Our research route </span>
+          </p>
+          <p>We first provide a comprehensive overview of the main iterative post-training paradigms for self-improvement, understanding both the explicit and implicit influencing factors that contribute to the consistent performance improvements. This provide actionable insights for practitioners on how to perform iterative self-improvement more effectively. </p>
+          <p>We further develop an evaluative framework equipped with a comprehensive suite of metrics to assess improvement problems, solutions diversity, and OOD capabilities within the iterative process, enabling us to scrutinize the actual improvements beneath self-improvement. </p>
+          
+          <p>
+            🧐 <span style="font-weight: bold; font-size: 1.05em"> What we reveal? </span>
+          </p>
+          <ul>
+            <li><b>Answer Selection Optimization: </b>Iterative self-improvement hardly entails the acquisition of new problem-solving abilities, but rather the enhancement of the model’s correct answer selection within its generation space.</li>
+            <li><b>Trade-off with Output Diversity: </b>There exists a critical trade-off in iterative self-improvement: while aiming for higher accuracy, the diversity of outputs, which can be crucial for creativity and robustness in problem-solving, is compromised. </li>
+            <li><b>Capabilities Collapse: </b>Iterative post-training methods can exacerbate the generalization disparities across groups, inadvertently causing models to focus on easier problems rather than enhancing their ability to solve more complex ones.  </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3", id="systemformulation">Systematic Formulation of Self-Improvement in Post-training</h2>
+        
+        <div style="text-align: left;">
+        <p>We identify key variables that influence the optimal improving performance and trend during the iterative post-training process: foundation model M, problem-solving task D, iteration steps T and post-training method F. For our experimental setup, we choose M = {LLaMA2-7B, LLaMA3-8B, Mistral-7B}, D = {CommonsenseQA for Commonse Knowledge, GSM8K and MATH for Mathematical Reasoning, MBPP for Code Generation}, T = {1, 2, 3, 4, 5}, and F = {Iterative SFT, Iterative DPO, Iterative SFT-DPO}. </p>
+        <p> <br> </p>
+        </div>
+
+        <div align="center">
+          <figure>
+            <img src="static/images/result.png" width=90%/>
+          </figure>
+        </div>
+        
+  
+          <div style="text-align: left;">
+              <span style="font-weight: bold; font-size: 1.05em"> Explicit influencing Factors </span> Across all methods and datasets, there is a general trend of improvement in pass@1 accuracy with increasing iteration steps. This indicates that iterative post-training effectively enhances model performance over time. However, the rate of improvement tends to plateau or even decline slightly after 4-5 iterations.
+          </div>
+
+
+        <div align="center">
+          <figure>
+            <img src="static/images/coverage.png" width=100%/>
+          </figure>
+        </div>
+
+        <div style="text-align: left;">
+          <span style="font-weight: bold; font-size: 1.05em"> Implicit Underlying Factor </span> We found that <b>Correct Answer Coverage</b>, the proportion of the correct answer space that M<sub>1</sub> occupy, can be used to gauge the model’s gains in self-improvement. The table above clearly demonstrates that when the correct answer coverage is high (>0.5), Iterative DPO and Iterative SFT-DPO produce the best-performing M<sub>t</sub><sup>*</sup>. Conversely, when the coverage is lower (< 0.5), Iterative SFT is more effective in achieving the optimal M<sub>t</sub><sup>*</sup>. Therefore, correct answer coverage can serve as a key factor in guiding practitioners to choose the suitable post-training method F.
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="evaluation">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Critical Evaluations on Self-Improvement</h2>
+        <div class="content has-text-justified">
+          <p>
+            We engage in a critical examination and reevaluation of iterative self-improvement: discerning whether the improvements constitute genuine progress or merely regression.
+
+            <h4 class="title is-8">🌟 Improvement Problems</h4>
+            <div align="center">
+              <figure>
+                <img src="static/images/improvementset.png" width=80%/>
+              </figure>
+            </div>
+            
+            <p><span style="font-weight: bold"> Reversal Observation </span> As N grows, M1 achieves near-perfect pass@N accuracy on IS(t) (Improvement set), suggesting its inherent capacity to tackle the deemed improvement problems. </p>
+
+            <h4 class="title is-8">🌟 Solutions Diversity</h4> 
+            
+            <div align="center">
+              <figure>
+                <img src="static/images/solution.png" width=80%/>
+              </figure>
+            </div>
+
+            <p><span style="font-weight: bold"> Reversal Observation </span> All methods show a consistent decrease in diversity, significantly diminishing the diversity of model outputs over iterations</href>, impacting both correct and incorrect answers. This reduction is evident across all three metrics: syntactic (Distinct-N grams), semantic (SentenceBERT Consine Similarity), and logical (Distinct Equations) diversity.</p>
+
+
+            <h4 class="title is-8">🌟 OOD Generalization</h4>
+            <div align="center">
+              <figure>
+                <img src="static/images/ood.png" width=80%/>
+              </figure>
+            </div>
+            <p><span style="font-weight: bold"> Reversal Observation </span> With the increase in iterative steps, Iterative SFT and Iterative SFT-DPO can significantly harm the OOD generalization. </href>In contrast, Iterative DPO demonstrates a noticeable improvement. However, all three iterative post-training methods can exacerbate the generalization disparities across groups, inadvertently causing models to focus on easier problems rather than enhancing their ability to solve more complex ones. </p>
+              
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Contact. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3", id="contact">📬 Contact</h2>
+        <div class="content has-text-justified">
+          <p>
+            If you have any questions regarding this project, feel free to submit a <a href="https://github.com/GAIR-NLP/self-improvement-reversal">github issue</a> or reach out to us via email.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+    <h2 class="title", id="reference">BibTeX</h2>
+
+    <p>If you find our paper and code helpful, please consider citing our work😊
+    </p>
+    <pre><code>@artical{wu2024progressregressselfimprovementreversal,
+        title={Progress or Regress? Self-Improvement Reversal in Post-training}, 
+        author={Ting Wu and Xuefeng Li and Pengfei Liu},
+        year={2024},
+        eprint={2407.05013},
+        archivePrefix={arXiv},
+        primaryClass={cs.CL},
+        url={https://arxiv.org/abs/2407.05013}
+      }
+</code></pre>
+</div>
+</div>
+</div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function showLeaderboard(type) {
+  // Hide all leaderboards initially
+  var allTables = document.querySelectorAll('.leaderboard-table');
+  allTables.forEach(table => table.style.display = 'none');
+  
+  // Show and sort the selected leaderboard
+  var table, isAscending;
+  switch (type) {
+    case 'selfKnowledge':
+      table = document.getElementById('selfKnowledgeTable');
+      isAscending = false;  // Higher values at the top
+      break;
+    case 'nonDeceptiveness':
+      table = document.getElementById('nonDeceptivenessTable');
+      isAscending = true;  // Lower values at the top
+      break;
+    case 'consistency':
+      table = document.getElementById('consistencyTable');
+      isAscending = false;  // Higher values at the top
+      break;
+  }
+
+  table.style.display = 'block';
+  sortTableByColumn(table.id, 1, isAscending);
+}
+
+function sortTableByColumn(tableId, colIndex, ascending = true) {
+  var table = document.getElementById(tableId);
+  var rows = Array.from(table.rows).slice(1);
+
+  rows.sort(function(a, b) {
+    var cellA = parseFloat(a.cells[colIndex].innerText) || 0;
+    var cellB = parseFloat(b.cells[colIndex].innerText) || 0;
+    return ascending ? cellA - cellB : cellB - cellA;
+  });
+
+  rows.forEach(function(row) {
+    table.tBodies[0].appendChild(row);
+  });
+}
+
+// Initialize the sorting for each leaderboard upon page load
+document.addEventListener('DOMContentLoaded', function() {
+  showLeaderboard('selfKnowledge'); // Show and sort self-knowledge by default
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.leaderboard-table th').forEach(function(header, index) {
+    header.addEventListener('click', function() {
+      var tableId = header.closest('table').id;
+      var ascending = !header.classList.contains('ascending');
+      sortTableByColumn(tableId, index, ascending);
+      header.classList.toggle('ascending', ascending);
+    });
+  });
+});
+</script>
+
+
+<style>
+  .hidden {
+      display: none;
+  }
+  .sortable:hover {
+      cursor: pointer;
+  }
+  .asc::after {
+      content: ' ↑';
+  }
+  .desc::after {
+      content: ' ↓';
+  }
+  .button-64 {
+  align-items: center;
+  background-image: linear-gradient(144deg, #C972FF, #7D74F3 50%, #40E0EB); /* Lighter gradient colors */
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 9px; /* Smaller font size */
+  justify-content: center;
+  line-height: 1em;
+  min-width: 70px; /* Smaller width */
+  padding: 2px; /* Less padding */
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  margin-right: 10px; /* Space between buttons */
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(235, 235, 245); /* Lighter background color for the text span */
+  color: #333; /* Darker text color for better contrast */
+  padding: 8px 12px; /* Adjust padding for smaller size */
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: rgba(235, 235, 245, 0.5); /* Even lighter on hover */
+}
+
+@media (min-width: 768px) {
+  .button-64 {
+    font-size: 16px; /* Adjust font size for larger screens */
+    min-width: 120px; /* Adjust minimum width for larger screens */
+  }
+}
+</style>
+
+
+
+
+</body>
+</html>
